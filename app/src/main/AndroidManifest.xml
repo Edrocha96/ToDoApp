@@ -6,12 +6,20 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logopretotodoapp_72px"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logopretotodoapp_72px"
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDoApp"
         tools:targetApi="31">
+        <activity
+            android:name=".NewTaskActivity"
+            android:exported="false"
+            android:parentActivityName=".MyTasksActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MyTasksActivity"
             android:exported="false">
@@ -21,14 +29,16 @@
         </activity>
         <activity
             android:name=".UserRegisterActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ForgotPasswordActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
