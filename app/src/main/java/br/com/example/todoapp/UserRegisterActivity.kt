@@ -21,7 +21,7 @@ class UserRegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user_register)
 
         buttonRegister = findViewById(R.id.btnRegisterUser)
-        inputTextName = findViewById(R.id.inputTextPersonName)
+        inputTextName = findViewById(R.id.inputTextTaskName)
         inputTextEmail = findViewById(R.id.editTextEmailAddressEsqueceu)
         inputTextPassword = findViewById(R.id.inputTextUserRegisterPassw)
         inputTextConfirmPassword = findViewById(R.id.inputTextUserRegisterConfirmPassw)

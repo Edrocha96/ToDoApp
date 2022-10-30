@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <EditText
-            android:id="@+id/inputTextPersonName"
+            android:id="@+id/inputTextTaskName"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:ems="10"
