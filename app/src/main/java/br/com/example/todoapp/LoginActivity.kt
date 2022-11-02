@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
 
@@ -37,8 +38,18 @@ class LoginActivity : AppCompatActivity() {
        }
 
         buttonLogin.setOnClickListener {
-            val intent = Intent(this,MyTasksActivity::class.java)
-            startActivity(intent)
+            val dados = getSharedPreferences("dados", MODE_PRIVATE)
+            val email = dados.getString("email_usuario", "Email não encontrado")
+            val senha = dados.getString("senha_usuario", "Senha não encontrada")
+
+            if (email == inputTextEmail.text.toString() && senha == inputTextPassword.text.toString()){
+                val intent = Intent(this,MyTasksActivity::class.java)
+                startActivity(intent)
+            }else{
+                Toast.makeText(this, "Usuário não encontrado, verifique seu e-mail e senha ou realize um cadastro.", Toast.LENGTH_SHORT).show()
+            }
+
+
         }
 
 

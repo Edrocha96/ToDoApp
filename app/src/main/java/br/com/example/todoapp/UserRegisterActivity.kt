@@ -21,17 +21,33 @@ class UserRegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user_register)
 
         buttonRegister = findViewById(R.id.btnRegisterUser)
-        inputTextName = findViewById(R.id.inputTextTaskName)
-        inputTextEmail = findViewById(R.id.editTextEmailAddressEsqueceu)
+        inputTextName = findViewById(R.id.inputTextNameUserRegister)
+        inputTextEmail = findViewById(R.id.editTextEmailAddresRegister)
         inputTextPassword = findViewById(R.id.inputTextUserRegisterPassw)
         inputTextConfirmPassword = findViewById(R.id.inputTextUserRegisterConfirmPassw)
 
-    }
+        buttonRegister.setOnClickListener{
+            val dados = getSharedPreferences("dados", MODE_PRIVATE)
 
-    fun btnConfirmRegister(view: View) {
-        Toast.makeText(this, "Cadastrado com Sucesso",Toast.LENGTH_SHORT).show()
-        val intent = Intent(this,LoginActivity::class.java)
-        startActivity(intent)
+            val edit = dados.edit()
+            edit.putString("nome_usuario", inputTextName.text.toString())
+            edit.putString("email_usuario", inputTextEmail.text.toString())
+            edit.putString("senha_usuario", inputTextPassword.text.toString())
+
+            if (inputTextName.text.toString().equals("")  || inputTextEmail.text.toString().equals("") || inputTextPassword.text.toString().equals("") || inputTextConfirmPassword.text.toString().equals("")){
+                Toast.makeText(this, "Preencha todos os campos",Toast.LENGTH_SHORT).show()
+            }else{
+                if (edit.commit()){
+                    Toast.makeText(this, "Cadastrado com Sucesso",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,LoginActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    Toast.makeText(this, "Problema ao cadastrar o usuário",Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        }
+
     }
 
 }

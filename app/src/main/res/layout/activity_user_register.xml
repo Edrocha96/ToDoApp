@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <EditText
-            android:id="@+id/inputTextTaskName"
+            android:id="@+id/inputTextNameUserRegister"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:ems="10"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <EditText
-            android:id="@+id/editTextEmailAddressEsqueceu"
+            android:id="@+id/editTextEmailAddresRegister"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:ems="10"
