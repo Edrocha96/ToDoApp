@@ -20,7 +20,7 @@
         tools:layout_editor_absoluteX="25dp" />-->
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewNewTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -54,7 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewTask"
         tools:listitem="@layout/task_list_layout" />
 
     <TextView
@@ -63,13 +63,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
         android:layout_marginTop="24dp"
-        android:text="Bem vindo: "
+        android:text="Bem vindo (a): "
         android:textColor="#151515"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textViewUsername"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewTask" />
 
     <TextView
         android:id="@+id/textViewUsername"
@@ -83,6 +83,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewWelcome"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewTask" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

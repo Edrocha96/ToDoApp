@@ -10,7 +10,7 @@
     tools:context=".NewTaskActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewNewTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -33,20 +33,20 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewTask" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1"
+        android:id="@+id/constraintLayout1NewTask"
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/activity_text_white_backgroud"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewTask">
 
         <EditText
-            android:id="@+id/inputTextNameUserRegister"
+            android:id="@+id/inputTextNameTask"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:ems="10"
@@ -60,54 +60,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
-        android:layout_width="360dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/activity_text_white_backgroud"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
-
-        <EditText
-            android:id="@+id/inputTextTaskDescription"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:ems="10"
-            android:hint="Descrição Tarefa"
-            android:inputType="textPersonName"
-            android:textAlignment="viewStart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout6"
+        android:id="@+id/constraintLayout2NewTask"
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/activity_text_white_backgroud"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout1"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout1"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout1NewTask"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout1NewTask"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1NewTask">
 
-        <!-- <EditText
-            android:id="@+id/editTextDate"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:ems="10"
-            android:hint="Data da tarefa"
-            android:inputType="date"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />-->
 
         <TextView
             android:id="@+id/textViewDateTask"
@@ -123,17 +84,30 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--<TextView
-        android:id="@+id/textViewDateTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
-        android:text="Data Tarefa"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3NewTask"
+        android:layout_width="360dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/activity_text_white_backgroud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2NewTask">
 
+        <EditText
+            android:id="@+id/inputTextTaskDescriptionNewTask"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:hint="Descrição Tarefa"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
