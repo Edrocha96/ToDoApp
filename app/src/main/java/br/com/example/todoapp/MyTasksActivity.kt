@@ -14,6 +14,7 @@ class MyTasksActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMyTasksBinding
     lateinit var userNameText: TextView
+    lateinit var  btnTeste: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,5 +30,12 @@ class MyTasksActivity : AppCompatActivity() {
         userNameText = findViewById(R.id.textViewUsername)
         val dados = getSharedPreferences("dados", MODE_PRIVATE)
         userNameText.text = dados.getString("nome_usuario", "Usuário não encontrado")
+
+        btnTeste  = findViewById(R.id.buttonteste)
+
+        btnTeste.setOnClickListener{
+            val intent = Intent(this,DetailsTaskActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
