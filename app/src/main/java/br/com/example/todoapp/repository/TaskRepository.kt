@@ -28,7 +28,7 @@ class TaskRepository(context: Context) {
         db.delete(task)
     }
 
-    // Deletar task
+    // Atualizar task
     fun updateTask(task: Task){
         db.update(task)
     }
