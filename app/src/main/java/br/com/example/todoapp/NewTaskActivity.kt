@@ -8,32 +8,59 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import br.com.example.todoapp.databinding.ActivityNewTaskBinding
+import br.com.example.todoapp.model.Task
+import br.com.example.todoapp.repository.TaskRepository
 import java.text.SimpleDateFormat
 import java.util.*
 
 class NewTaskActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
-    lateinit var buttonRegisterNewTask: Button
+
    /* lateinit var editTextDate: EditText*/
-    lateinit var dateTerefa: TextView
+/*    lateinit var dateTerefa: TextView*/
+    lateinit var binding: ActivityNewTaskBinding
+    lateinit var taskRepository: TaskRepository
+    lateinit var task: Task
     private val calendar = Calendar.getInstance()
     private val formatter = SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ROOT)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_task)
 
-        buttonRegisterNewTask = findViewById(R.id.btnRegisterNewTask)
-        dateTerefa = findViewById(R.id.textViewDateTask)
+        binding = ActivityNewTaskBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        dateTerefa.setOnClickListener{
+        binding.textViewDateTask.setOnClickListener{
             DatePickerDialog(this,this,
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)).show()
         }
+
+        //Inicializar o repository
+        taskRepository = TaskRepository(this)
+
+        binding.btnRegisterNewTask.setOnClickListener(){
+            saveTask()
+        }
+
     }
 
+    private fun saveTask() {
+        task = Task()
+        task.apply {
+            titleTask = binding.inputTextNameTask.text.toString()
+            descriptionTask = binding.inputTextTaskDescriptionNewTask.text.toString()
+            taskDate = binding.textViewDateTask.text.toString()
+        }
+
+        taskRepository.insert(task)
+        Toast.makeText(this, "Nova tarefa cadastrada com sucesso", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this,MyTasksActivity::class.java)
+        startActivity(intent)
+
+    }
 
     fun btnRegisterNewTask(view: View) {
         Toast.makeText(this, "Nova tarefa cadastrada com sucesso", Toast.LENGTH_SHORT).show()

@@ -14,7 +14,8 @@
         tools:targetApi="31" >
         <activity
             android:name=".DetailsTaskActivity"
-            android:exported="false" >
+            android:exported="false"
+            android:parentActivityName=".MyTasksActivity" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
